@@ -1,0 +1,138 @@
+.patients-container {
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.patient-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.patient-card {
+    background: #fff8fb; /* pastel pink */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.patient-info h3 {
+    margin: 0 0 10px 0;
+    color: #ff6296; /* pastel pink */
+}
+
+.patient-info p {
+    margin: 5px 0;
+    color: #8ac6ff; /* pastel blue */
+}
+
+.patient-info i {
+    width: 20px;
+    color: #8ac6ff; /* pastel blue */
+}
+
+.patient-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-primary {
+    background: #8ac6ff; /* pastel blue */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary:hover {
+    background: #78aed6; /* darker pastel blue */
+}
+
+.btn-primary:disabled {
+    background: #bdc3c7; /* muted grey */
+    cursor: not-allowed;
+}
+
+.btn-edit, .btn-delete {
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-edit {
+    background: #ffd98a; /* pastel yellow-orange */
+    color: white;
+}
+
+.btn-delete {
+    background: #ff8c8c; /* pastel red-pink */
+    color: white;
+}
+
+.patient-form {
+    background: #f0faff; /* pastel blue */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ff6296; /* pastel pink */
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #b0b0b0; /* muted grey */
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    min-height: 100px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-secondary {
+    background: #95a5a6; /* muted grey */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.error-message {
+    background: #ff8c8c; /* pastel red-pink */
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}

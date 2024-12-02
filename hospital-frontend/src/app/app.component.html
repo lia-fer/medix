@@ -1,0 +1,16 @@
+<nav>
+  <ul>
+    <li><a routerLink="/">Home</a></li>
+    <ng-container *ngIf="!authService.isLoggedIn()">
+      <li><a routerLink="/login">Login</a></li>
+      <li><a routerLink="/register">Register</a></li>
+    </ng-container>
+    <li *ngIf="authService.isLoggedIn()">
+      <a href="javascript:void(0)" (click)="logout()">Logout</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="app-container">
+  <router-outlet></router-outlet>
+</div>

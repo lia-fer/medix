@@ -1,0 +1,65 @@
+<div class="auth-container" style="background-color: #fce4ec; padding: 20px; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+  <div class="auth-card" style="background-color: #ffffff; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); width: 400px; padding: 30px;">
+    <div class="auth-header" style="text-align: center; margin-bottom: 20px; background-color: #add8e6; padding: 20px; border-radius: 10px 10px 0 0;">
+      <svg class="auth-icon" viewBox="0 0 64 64" width="64" height="64">
+        <circle cx="32" cy="24" r="16" fill="#ffffff" opacity="0.9"/> <!-- White -->
+        <path d="M32 44C20 44 10 52 10 64H54C54 52 44 44 32 44" fill="#ffffff" opacity="0.9"/> <!-- White -->
+      </svg>
+      <h2 style="color: #ffb6c1;">Welcome Back</h2> <!-- Pastel Pink -->
+    </div>
+
+    <form class="auth-form" (ngSubmit)="onLogin()" #loginForm="ngForm">
+      <div class="error-message" *ngIf="errorMessage" style="color: #ff6961; font-size: 14px; margin-bottom: 15px;">
+        <i class="fas fa-exclamation-circle"></i>
+        {{ errorMessage }}
+      </div>
+
+      <div class="form-group" style="margin-bottom: 15px;">
+        <label class="form-label" for="username" style="color: #6c757d; font-weight: bold;">Username</label>
+        <input 
+          type="text" 
+          id="username"
+          name="username"
+          class="form-control"
+          style="border: 1px solid #add8e6; border-radius: 5px; padding: 8px; width: 100%;"
+          [(ngModel)]="username"
+          placeholder="Enter your username"
+          required>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 15px;">
+        <label class="form-label" for="password" style="color: #6c757d; font-weight: bold;">Password</label>
+        <div class="password-field" style="position: relative;">
+          <input 
+            [type]="showPassword ? 'text' : 'password'"
+            id="password"
+            name="password"
+            class="form-control"
+            style="border: 1px solid #add8e6; border-radius: 5px; padding: 8px; width: 100%;"
+            [(ngModel)]="password"
+            placeholder="Enter your password"
+            required>
+          <button 
+            type="button" 
+            class="password-toggle"
+            style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #ffb6c1; cursor: pointer;">
+            <i class="fas" [class.fa-eye]="!showPassword" [class.fa-eye-slash]="showPassword"></i>
+          </button>
+        </div>
+      </div>
+
+      <button 
+        type="submit" 
+        class="auth-button"
+        style="background-color: #add8e6; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; width: 100%;"
+        [disabled]="loginAttempts >= 3">
+        <i class="fas fa-sign-in-alt"></i>
+        {{ loginAttempts >= 3 ? 'Too many attempts' : 'Login' }}
+      </button>
+    </form>
+
+    <div class="auth-footer" style="margin-top: 20px; text-align: center; color: #6c757d;">
+      <p>Don't have an account? <a routerLink="/register" style="color: #ffb6c1; text-decoration: none;">Register</a></p>
+    </div>
+  </div>
+</div>

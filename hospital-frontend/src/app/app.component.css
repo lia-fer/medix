@@ -1,0 +1,26 @@
+nav {
+  background-color: #f0faff; /* pastel blue */
+  padding: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ff6296; /* pastel pink */
+}
+
+nav a:hover {
+  color: #8ac6ff; /* pastel blue */
+}
+
+.app-container {
+  padding: 20px;
+  background-color: #fff8fb; /* pastel pink */
+}

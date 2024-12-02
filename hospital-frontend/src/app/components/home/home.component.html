@@ -1,0 +1,66 @@
+<!-- Add these to home.component.html -->
+<div class="home-container" style="background-color: #fce4ec; padding: 20px; min-height: 100vh; display: flex; flex-direction: column; align-items: center;">
+    <div class="hero-section" style="text-align: center; margin-bottom: 30px;">
+        <!-- Heading with Shadows -->
+        <h1 style="color: #add8e6; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+            Welcome to MEDIX
+        </h1>
+        <p class="subtitle" style="color: #ffb6c1; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);">
+            Streamline your healthcare practice with our advanced management solution
+        </p>
+    </div>
+    
+    <div class="features-grid" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+        <div class="feature-card" style="background-color: #ffffff; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center; width: 250px;">
+            <svg class="feature-icon" viewBox="0 0 200 200" width="80" height="80">
+                <!-- Hospital Building -->
+                <rect x="40" y="60" width="120" height="120" fill="#add8e6" rx="15"/> <!-- Rounded Edges -->
+                <rect x="60" y="90" width="30" height="40" fill="white" rx="8"/> <!-- Rounded Edges -->
+                <rect x="110" y="90" width="30" height="40" fill="white" rx="8"/> <!-- Rounded Edges -->
+                <rect x="85" y="20" width="30" height="40" fill="#add8e6" rx="8"/> <!-- Rounded Edges -->
+                <path d="M70 10 L130 10 L100 35 Z" fill="#add8e6"/> <!-- Triangle remains -->
+                <!-- Red Cross -->
+                <rect x="90" y="100" width="20" height="60" fill="#ffb6c1" rx="5"/> <!-- Rounded Edges -->
+                <rect x="70" y="120" width="60" height="20" fill="#ffb6c1" rx="5"/> <!-- Rounded Edges -->
+            </svg>
+            <h3 style="color: #add8e6; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);">24/7 Emergency Care</h3>
+            <p style="color: #4d4d4d; text-shadow: 1px 1px 3px rgba(255, 182, 193, 0.5);">Round-the-clock medical services for your patients</p>
+        </div>
+        
+        <div class="feature-card" style="background-color: #ffffff; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center; width: 250px;">
+            <svg class="feature-icon" viewBox="0 0 200 200" width="80" height="80">
+                <!-- Doctor Icon -->
+                <circle cx="100" cy="70" r="40" fill="#add8e6"/> <!-- Circle remains -->
+                <path d="M100 120 C60 120 40 150 40 200 L160 200 C160 150 140 120 100 120" fill="#add8e6" style="border-radius: 15px;"/> <!-- Rounded -->
+                <circle cx="100" cy="60" r="20" fill="white"/>
+                <rect x="95" y="85" width="10" height="20" fill="white" rx="5"/> <!-- Rounded -->
+                <rect x="85" y="95" width="30" height="10" fill="white" rx="5"/> <!-- Rounded -->
+            </svg>
+            <h3 style="color: #add8e6; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);">Expert Medical Staff</h3>
+            <p style="color: #4d4d4d; text-shadow: 1px 1px 3px rgba(255, 182, 193, 0.5);">Qualified and experienced healthcare professionals</p>
+        </div>
+        
+        <div class="feature-card" style="background-color: #ffffff; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center; width: 250px;">
+            <svg class="feature-icon" viewBox="0 0 200 200" width="80" height="80">
+                <!-- Calendar Icon -->
+                <rect x="40" y="40" width="120" height="120" fill="#add8e6" rx="15"/> <!-- Rounded -->
+                <rect x="50" y="50" width="100" height="30" fill="white" rx="8"/> <!-- Rounded -->
+                <circle cx="70" cy="100" r="10" fill="white"/>
+                <circle cx="100" cy="100" r="10" fill="white"/>
+                <circle cx="130" cy="100" r="10" fill="white"/>
+                <circle cx="70" cy="130" r="10" fill="white"/>
+                <circle cx="100" cy="130" r="10" fill="white"/>
+                <circle cx="130" cy="130" r="10" fill="white"/>
+            </svg>
+            <h3 style="color: #add8e6; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);">Easy Appointment Booking</h3>
+            <p style="color: #4d4d4d; text-shadow: 1px 1px 3px rgba(255, 182, 193, 0.5);">Efficient scheduling system for better patient care</p>
+        </div>
+    </div>
+
+    <!-- Rounded Hospital GIF Below -->
+    <div style="margin-top: 30px; text-align: center;">
+        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnBuN3Y4a2c1NTh1aHJiNWtoc3U0YWlmem5reTQweHRkbzdheTBoNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L4IUCSVDV7Fvy/giphy.gif" 
+             alt="Hospital GIF" 
+             style="width: 100px; height: 100px; border-radius: 50%;">
+    </div>
+</div>

@@ -1,0 +1,137 @@
+.appointments-container {
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.calendar-container {
+    background: #fff8fb; /* very light pastel pink */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.date-selector {
+    margin-bottom: 20px;
+}
+
+.date-selector input {
+    padding: 8px;
+    border: 1px solid #b0b0b0; /* muted grey */
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.appointments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.appointment-card {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    gap: 20px;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #d9d9d9; /* muted grey */
+    border-radius: 8px;
+    background: #f0faff; /* very light pastel blue */
+}
+
+.appointment-time {
+    font-weight: bold;
+    color: #ff6296; /* darker pastel pink */
+}
+
+.appointment-info h4 {
+    margin: 0 0 5px 0;
+    color: #8ac6ff; /* pastel blue */
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.status-badge.scheduled {
+    background: #8ac6ff; /* pastel blue */
+    color: white;
+}
+
+.status-badge.completed {
+    background: #9cffa3; /* soft green */
+    color: white;
+}
+
+.status-badge.cancelled {
+    background: #ff8c8c; /* soft red-pink */
+    color: white;
+}
+
+.appointment-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-edit,
+.btn-delete {
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-edit {
+    background: #ffd98a; /* soft yellow-orange */
+    color: white;
+}
+
+.btn-delete {
+    background: #ff8c8c; /* soft red-pink */
+    color: white;
+}
+
+.appointment-form {
+    background: #fff8fb; /* very light pastel pink */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ff6296; /* darker pastel pink */
+}
+
+.form-group select,
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #b0b0b0; /* muted grey */
+    border-radius: 4px;
+}
+
+.error-message {
+    background: #ff8c8c; /* soft red-pink */
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}

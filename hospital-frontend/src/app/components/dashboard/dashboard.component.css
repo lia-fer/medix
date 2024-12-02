@@ -1,0 +1,245 @@
+/* Dashboard Layout */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f0faff; /* pastel blue */
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 280px;
+  background: #fff8fb; /* pastel pink */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+}
+
+.doctor-profile {
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1rem;
+  background: #f0faff; /* pastel blue */
+  border-radius: 50%;
+  padding: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.doctor-profile h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #ff6296; /* pastel pink */
+}
+
+.role {
+  font-size: 0.9rem;
+  color: #8ac6ff; /* pastel blue */
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+  padding: 1.5rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 0.875rem 1rem;
+  color: #8ac6ff; /* pastel blue */
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  background-color: #f0faff; /* pastel blue */
+  color: #ff6296; /* pastel pink */
+}
+
+.nav-item.active {
+  background-color: #ff8ab8; /* pastel pink */
+  color: white;
+}
+
+.badge {
+  background: #f0faff; /* pastel blue */
+  color: #8ac6ff; /* pastel blue */
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.nav-item.active .badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  margin-left: 280px;
+  padding: 2rem;
+}
+
+/* Header Section */
+.content-header {
+  margin-bottom: 2rem;
+}
+
+.header-left h1 {
+  font-size: 1.75rem;
+  color: #ff6296; /* pastel pink */
+  margin-bottom: 0.5rem;
+}
+
+.breadcrumb {
+  color: #8ac6ff; /* pastel blue */
+  font-size: 0.9rem;
+}
+
+/* Quick Stats */
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: #fff8fb; /* pastel pink */
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  background: #8ac6ff; /* pastel blue */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.stat-icon i {
+  color: white;
+  font-size: 1.25rem;
+}
+
+.stat-info {
+  flex: 1;
+}
+
+.stat-label {
+  display: block;
+  color: #8ac6ff; /* pastel blue */
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ff6296; /* pastel pink */
+}
+
+/* Logout Button */
+.nav-footer {
+  margin-top: auto;
+  padding: 1rem;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 0.875rem;
+  background: #f0faff; /* pastel blue */
+  color: #ff8c8c; /* soft red-pink */
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #ffe4e4; /* lighter pastel red */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .sidebar {
+      width: 80px;
+      overflow: hidden;
+  }
+
+  .main-content {
+      margin-left: 80px;
+  }
+
+  .doctor-profile h3,
+  .doctor-profile .role,
+  .nav-item span,
+  .badge {
+      display: none;
+  }
+
+  .nav-item {
+      justify-content: center;
+      padding: 1rem;
+  }
+
+  .nav-item i {
+      margin: 0;
+      font-size: 1.25rem;
+  }
+
+  .avatar {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 0;
+  }
+
+  .doctor-profile {
+      padding: 1rem;
+  }
+
+  .logout-btn span {
+      display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .quick-stats {
+      grid-template-columns: 1fr;
+  }
+
+  .main-content {
+      padding: 1rem;
+  }
+}

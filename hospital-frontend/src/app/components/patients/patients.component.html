@@ -1,0 +1,125 @@
+<div class="patients-container" style="background-color: #fce4ec; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+    <div class="header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h2 style="color: #add8e6; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);">Patient Management</h2>
+        <button 
+            class="btn-primary" 
+            (click)="openAddForm()" 
+            [disabled]="patients.length >= 10"
+            style="background-color: #add8e6; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">
+            <i class="fas fa-plus"></i> Add Patient
+        </button>
+    </div>
+
+    <div class="error-message" *ngIf="errorMessage" style="color: #ff6961; font-size: 14px; margin-bottom: 15px;">
+        {{ errorMessage }}
+    </div>
+
+    <div class="patient-list" *ngIf="!showForm" style="display: flex; flex-wrap: wrap; gap: 20px;">
+        <div 
+            class="patient-card" 
+            *ngFor="let patient of patients" 
+            style="background-color: #ffffff; border-radius: 10px; padding: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: calc(33.33% - 20px);">
+            <div class="patient-info" style="margin-bottom: 15px;">
+                <h3 style="color: #add8e6;">{{ patient.fullName }}</h3>
+                <p style="color: #6c757d;"><i class="fas fa-birthday-cake"></i> {{ patient.birthDate }}</p>
+                <p *ngIf="patient.contactNumber" style="color: #6c757d;">
+                    <i class="fas fa-phone"></i> {{ patient.contactNumber }}
+                </p>
+                <p *ngIf="patient.email" style="color: #6c757d;">
+                    <i class="fas fa-envelope"></i> {{ patient.email }}
+                </p>
+            </div>
+            <div class="patient-actions" style="display: flex; justify-content: space-between;">
+                <button 
+                    class="btn-edit" 
+                    (click)="openEditForm(patient)" 
+                    style="background-color: #add8e6; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
+                    <i class="fas fa-edit"></i>
+                </button>
+                <button 
+                    class="btn-delete" 
+                    (click)="removePatient(patient.id)" 
+                    style="background-color: #ff6961; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="patient-form" *ngIf="showForm" style="background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        <h3 style="color: #add8e6; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);">
+            {{ isEditing ? 'Edit' : 'Add' }} Patient
+        </h3>
+        <form (ngSubmit)="savePatient()">
+            <div class="form-group" style="margin-bottom: 15px;">
+                <label style="color: #6c757d; font-weight: bold;">Full Name *</label>
+                <input 
+                    type="text" 
+                    [(ngModel)]="currentPatient.fullName" 
+                    name="fullName" 
+                    required 
+                    style="border: 1px solid #add8e6; border-radius: 5px; padding: 8px; width: 100%;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 15px;">
+                <label style="color: #6c757d; font-weight: bold;">Birth Date *</label>
+                <input 
+                    type="date" 
+                    [(ngModel)]="currentPatient.birthDate" 
+                    name="birthDate" 
+                    required 
+                    style="border: 1px solid #add8e6; border-radius: 5px; padding: 8px; width: 100%;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 15px;">
+                <label style="color: #6c757d; font-weight: bold;">Contact Number</label>
+                <input 
+                    type="tel" 
+                    [(ngModel)]="currentPatient.contactNumber" 
+                    name="contactNumber" 
+                    style="border: 1px solid #add8e6; border-radius: 5px; padding: 8px; width: 100%;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 15px;">
+                <label style="color: #6c757d; font-weight: bold;">Email</label>
+                <input 
+                    type="email" 
+                    [(ngModel)]="currentPatient.email" 
+                    name="email" 
+                    style="border: 1px solid #add8e6; border-radius: 5px; padding: 8px; width: 100%;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 15px;">
+                <label style="color: #6c757d; font-weight: bold;">Address</label>
+                <textarea 
+                    [(ngModel)]="currentPatient.address" 
+                    name="address" 
+                    style="border: 1px solid #add8e6; border-radius: 5px; padding: 8px; width: 100%;"></textarea>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 15px;">
+                <label style="color: #6c757d; font-weight: bold;">Medical History</label>
+                <textarea 
+                    [(ngModel)]="currentPatient.medicalHistory" 
+                    name="medicalHistory" 
+                    style="border: 1px solid #add8e6; border-radius: 5px; padding: 8px; width: 100%;"></textarea>
+            </div>
+
+            <div class="form-actions" style="display: flex; justify-content: flex-end; gap: 10px;">
+                <button 
+                    type="button" 
+                    class="btn-secondary" 
+                    (click)="showForm = false" 
+                    style="background-color: #ffb6c1; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">
+                    Cancel
+                </button>
+                <button 
+                    type="submit" 
+                    class="btn-primary" 
+                    style="background-color: #add8e6; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">
+                    Save
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
